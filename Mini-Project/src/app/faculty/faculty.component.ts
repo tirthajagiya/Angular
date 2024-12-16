@@ -36,12 +36,11 @@ export class FacultyComponent {
     this.count = 0;
   }
 
-  imageChange(num: number): void {
-    if(this.count>=0 && this.count<this.faculty.length-1){
-      this.count+=num;
-    }
-    else{
-      this.count=0;
-    }
+  imageChange(): void{
+    this.count++;
+  }
+
+  imageChang(){
+    this.count--
   }
 }
