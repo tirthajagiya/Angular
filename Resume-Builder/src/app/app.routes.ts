@@ -4,16 +4,20 @@ import { ResumeComponent } from './resume/resume.component';
 import { AboutComponent } from './about/about.component';
 
 export const routes: Routes = [
-{
-    path: "home",
-    component: HomeComponent
-},
-{
-    path:"resume",
-    component:ResumeComponent
-},
-{
-    path:"about",
-    component:AboutComponent
-}
+    {
+        path:"",
+        component:HomeComponent
+    },
+    {
+        path: "home",
+        component: HomeComponent
+    },
+    {
+        path: "resume",
+        component: ResumeComponent
+    },
+    {
+        path: "about",
+        component: AboutComponent
+    }
 ];
