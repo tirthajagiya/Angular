@@ -12,3 +12,9 @@
     <td><button (click)="updateStudent(i)">Update</button></td>
   </tr>
 </table>
+<input type="text" [(ngModel)]="serStu">
+<button (click)="searchStudent()">Search</button>
+<div *ngFor="let serStu of searchStu">
+  Hello
+  {{serStu}}
+</div>

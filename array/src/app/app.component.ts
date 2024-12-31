@@ -3,6 +3,7 @@ import { Component, numberAttribute } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { animationFrameScheduler } from 'rxjs';
+import { text } from 'body-parser';
 
 @Component({
   selector: 'app-root',
@@ -23,6 +24,10 @@ export class AppComponent {
 
   updatedIndex: number = -1
 
+  searchStu: any = []
+
+  serStu: string = ""
+
   addStudentName() {
     if (this.btnName == "Add") {
       if (this.name.trim() != "") {
@@ -35,17 +40,37 @@ export class AppComponent {
         this.student[this.updatedIndex] = this.name
         this.btnName = "Add"
         this.name = ""
+        this.updatedIndex = -1
       }
+    }
+    else if (this.btnName == "Search") {
+
+      this.btnName = "Add"
+    }
+    else {
+      this.btnName = "Add"
     }
   }
 
   deleteStudent(index: number) {
     this.student.splice(index, 1);
+    this.btnName = "Add"
+    this.name = ""
+    this.updatedIndex = -1
   }
 
   updateStudent(index: number) {
     this.name = this.student[index]
     this.btnName = "Update"
     this.updatedIndex = index
+  }
+
+  searchStudent() {
+    // this.btnName = "Search"
+    this.searchStu = this.student.filter((stu: any) => {
+      if (stu == this.serStu) {
+        return stu;
+      }
+    })
   }
 }
