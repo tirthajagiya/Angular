@@ -31,7 +31,11 @@ export class AppComponent {
       }
     }
     else if (this.btnName == "Update") {
-      this.student[this.updateStudent]=
+      if (this.name.trim() != "") {
+        this.student[this.updatedIndex] = this.name
+        this.btnName = "Add"
+        this.name = ""
+      }
     }
   }
 
@@ -42,6 +46,6 @@ export class AppComponent {
   updateStudent(index: number) {
     this.name = this.student[index]
     this.btnName = "Update"
-    this.updatedIndex=index
+    this.updatedIndex = index
   }
 }
