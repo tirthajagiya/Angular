@@ -1,6 +1,7 @@
 <!-- <input  type="text" id="" (change)="setStudentName($event)">
 <button (click)="addStudentName()">Add</button> -->
-<input type="text" [(ngModel)]="name">
+<div (click)="divEvent()">
+  <input type="text" [(ngModel)]="name">
 <button (click)="addStudentName()">{{btnName}}</button>
 <table [border]="border">
   <tr>
@@ -12,9 +13,9 @@
     <td><button (click)="updateStudent(i)">Update</button></td>
   </tr>
 </table>
+</div>
 <input type="text" [(ngModel)]="serStu">
 <button (click)="searchStudent()">Search</button>
 <div *ngFor="let serStu of searchStu">
-  Hello
   {{serStu}}
 </div>

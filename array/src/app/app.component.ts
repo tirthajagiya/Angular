@@ -68,9 +68,14 @@ export class AppComponent {
   searchStudent() {
     // this.btnName = "Search"
     this.searchStu = this.student.filter((stu: any) => {
-      if (stu == this.serStu) {
+      if (stu.includes(this.serStu)) {
         return stu;
       }
     })
+  }
+
+  divEvent(){
+    this.serStu=""
+    this.searchStu=[]
   }
 }
