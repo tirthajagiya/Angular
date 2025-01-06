@@ -5,4 +5,4 @@ Name :
 </span>
 <button (click)="btnClick()">{{nameOfBtn}}</button>
 <br>
-<app-child [parentName]="name" (sendData)="reciveData($event)"/>
+<app-child [parentName]="name" (name)="reciveData($event)"/>

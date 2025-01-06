@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 })
 export class ChildComponent {
   // parentName = input();
-  @Input() parentName: String = ''
+  @Input() parentName: String =''
 
   nameChange: boolean = false
   nameOfBtn = "Change Name"
@@ -20,10 +20,12 @@ export class ChildComponent {
   sendData() {
     this.name.emit(this.parentName)
   }
+  
   btnClick(): void {
     if (this.nameOfBtn == "Ok") {
       this.nameOfBtn = "Change Name"
       this.nameChange = false
+      this.sendData();
     }
     else if (this.nameOfBtn == "Change Name") {
       this.nameOfBtn = "Ok"
