@@ -41,7 +41,21 @@ export class AppComponent {
     this.isValid = true
   }
 
-  addFaculty() {
+  tempObj = {
+    img: "",
+    name: "",
+    dept: ""
+  }
 
+  addFaculty() {
+    this.faculty.push({ ...this.tempObj })
+    this.tempObj.img = "";
+    this.tempObj.name = "";
+    this.tempObj.dept = ""
+    this.isValid = false;
+  }
+
+  editStudent(i:any) {
+    
   }
 }

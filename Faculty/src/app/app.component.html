@@ -8,9 +8,9 @@
     <div class="col">
       <!-- <router-outlet /> -->
       <div *ngIf="isValid">
-        <input type="text" placeholder="Put Image Link Here">
-        <input type="text" placeholder="Enter Faculty Name Here">
-        <input type="text" placeholder="Enter Faculty Department Here">
+        <input type="text" [(ngModel)]="tempObj.img" placeholder="Put Image Link Here">
+        <input type="text" [(ngModel)]="tempObj.name" placeholder="Enter Faculty Name Here">
+        <input type="text" [(ngModel)]="tempObj.dept" placeholder="Enter Faculty Department Here">
         <button (click)="addFaculty()">Done</button>
       </div>
       <table border="1">
@@ -18,11 +18,13 @@
         <th>Name</th>
         <th>Department</th>
         <th><button class="btn btn-primary" (click)="inputValid()">Add</button></th>
+        <th><button class="btn btn-secondary" (click)="inputValid()">Search</button></th>
         <tr *ngFor="let temp of faculty let i=index">
           <td><img [src]="temp.img" alt="Faculty Image"></td>
           <td>{{temp.name}}</td>
           <td>{{temp.dept}}</td>
           <td><button class="btn btn-danger" (click)="deleteStudent(i)">Delete</button></td>
+          <td><button class="btn btn-warning" (click)="editStudent(i)">Edit</button></td>
         </tr>
       </table>
     </div>

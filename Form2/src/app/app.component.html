@@ -1,0 +1,27 @@
+<form #userForm="ngForm" (ngSubmit)="submitForm()">
+  <table>
+    <tr>
+      <td>
+        Enter Name :
+      </td>
+      <td>
+        <input type="text" name="name" [(ngModel)]="data.name" #name="ngModel" required>
+        <span *ngIf=name.invalid&&name.touched>Please Enter Name</span>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Enter Password :
+      </td>
+      <td>
+        <input type="text" name="password" [(ngModel)]="data.password" #password="ngModel" required>
+        <span *ngIf=password.invalid&&password.touched>Please Enter Password</span>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <input type="submit" [disabled]="userForm.invalid">
+      </td>
+    </tr>
+  </table>
+</form>
