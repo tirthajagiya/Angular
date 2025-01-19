@@ -7,7 +7,7 @@
   <div class="row p-5">
     <div class="col">
       <!-- <router-outlet /> -->
-      <div *ngIf="isValid">
+      <!-- <div *ngIf="isValid">
         <input type="text" [(ngModel)]="tempObj.img" placeholder="Put Image Link Here">
         <input type="text" [(ngModel)]="tempObj.name" placeholder="Enter Faculty Name Here">
         <input type="text" [(ngModel)]="tempObj.dept" placeholder="Enter Faculty Department Here">
@@ -26,7 +26,30 @@
           <td><button class="btn btn-danger" (click)="deleteStudent(i)">Delete</button></td>
           <td><button class="btn btn-warning" (click)="editStudent(i)">Edit</button></td>
         </tr>
-      </table>
+      </table> -->
+      <div>
+        <th><button class="btn btn-primary" (click)="inputValid()">Add</button></th>
+        <th><button class="btn btn-secondary" (click)="inputValid()">Search</button></th>
+        <div *ngIf="isValid">
+          <input type="text" [(ngModel)]="tempObj.img" placeholder="Put Image Link Here">
+          <input type="text" [(ngModel)]="tempObj.name" placeholder="Enter Faculty Name Here">
+          <input type="text" [(ngModel)]="tempObj.dept" placeholder="Enter Faculty Department Here">
+          <button (click)="addFaculty()">Done</button>
+        </div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="card col-3 m-3" style="width: 18rem;" *ngFor="let temp of faculty let i=index">
+            <img [src]="temp.img" alt="faculty image" class="card-img-top" style="height: 250px;">
+            <div class="card-body">
+              <h5 class="card-title">Name : {{temp.name}}</h5>
+              <p class="card-text">Department : {{temp.dept}}</p>
+              <button class="btn btn-danger" (click)="deleteStudent(i)">Delete</button>
+              <button class="btn btn-warning" (click)="editStudent(i)">Edit</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="row">

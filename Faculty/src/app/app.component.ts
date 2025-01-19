@@ -48,14 +48,26 @@ export class AppComponent {
   }
 
   addFaculty() {
-    this.faculty.push({ ...this.tempObj })
+    if (this.updateFacutly == -1) {
+      this.faculty.push({ ...this.tempObj })
+    }
+    else if (this.updateFacutly != -1) {
+      this.faculty[this.updateFacutly] = ({ ...this.tempObj })
+      this.updateFacutly = -1
+    }
     this.tempObj.img = "";
     this.tempObj.name = "";
     this.tempObj.dept = ""
     this.isValid = false;
   }
 
-  editStudent(i:any) {
-    
+  updateFacutly: number = -1;
+
+  editStudent(i: any) {
+    this.isValid = true
+    this.updateFacutly = i
+    this.tempObj.img = this.faculty[i].img
+    this.tempObj.name = this.faculty[i].name
+    this.tempObj.dept = this.faculty[i].dept
   }
 }
