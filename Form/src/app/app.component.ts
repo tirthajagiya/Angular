@@ -1,37 +1,18 @@
 import { CommonModule, NgFor } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { ReactiveFormComponent } from "./reactive-form/reactive-form.component";
+import { SimpleFormComponent } from "./simple-form/simple-form.component";
+import { DeclarativeFormComponent } from "./declarative-form/declarative-form.component";
+import { ReactiveFormUsingFormBuilderComponent } from "./reactive-form-using-form-builder/reactive-form-using-form-builder.component";
+import { LoginFormComponent } from "./login-form/login-form.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet,CommonModule,NgFor],
+  imports: [ReactiveFormComponent, SimpleFormComponent,RouterLink, DeclarativeFormComponent, ReactiveFormUsingFormBuilderComponent, LoginFormComponent,RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  student = {
-    Name: "",
-    Contact_Number: "",
-    Sem: "",
-    Spi: ""
-  }
-
-  project: any = {
-    Project_Name:"",
-    Project_Id:"",
-    Project_Title:""
-  }
-  projects: any = []
-
-  setStudentData(e: any) {
-    this.student = { ...this.student, [e.target.name]: e.target.value }
-  }
-
-  setProjectData(e: any) {
-    this.project = { ...this.project, [e.target.name]: e.target.value }
-  }
-
-  addProjectData(e: any) {
-    this.projects.push(this.project)
-  }
+  
 }

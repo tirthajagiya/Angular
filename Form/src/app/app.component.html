@@ -1,91 +1,25 @@
-<div class="container">
-  <h2>Personal Info</h2>
-  <div class="row">
-    <div class="col-2">
-      <label for="">Name : &nbsp;</label>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="simple-form">Simple Form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="declarative-form">Declarative Form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="reactive-form">Reactive Form</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="form-builder">Form Using Form Builder</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="login-signup-form">Login-Signup Form</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <div class="col">
-      <input type="text" name="Name" (input)="setStudentData($event)">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-2">
-      <label for="">Contact Number : &nbsp;</label>
-    </div>
-    <div class="col">
-      <input type="text" name="Contact_Number" (input)="setStudentData($event)">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-2">
-      <label for="">Sem : &nbsp;</label>
-    </div>
-    <div class="col">
-      <input type="text" name="Sem" (input)="setStudentData($event)">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-2">
-      <label for="">Spi : &nbsp;</label>
-    </div>
-    <div class="col">
-      <input type="text" name="Spi" (input)="setStudentData($event)">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      {{student | json}}
-    </div>
-  </div>
-  <h2>Project Detail</h2>
-  <div class="row">
-    <div class="col-2">
-      <label for="">Project Name : &nbsp;</label>
-    </div>
-    <div class="col">
-      <input type="text" name="Project_Name" (input)="setProjectData($event)">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-2">
-      <label for="">Project Id : &nbsp;</label>
-    </div>
-    <div class="col">
-      <input type="text" name="Project_Id" (input)="setProjectData($event)">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-2">
-      <label for="">Project Title : &nbsp;</label>
-    </div>
-    <div class="col">
-      <input type="text" name="Project_Title" (input)="setProjectData($event)">
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <button (click)="addProjectData($event)">Add</button>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      {{project | json}}
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <table>
-        <tr>
-          <th>Project Name</th>
-          <th>Project Id</th>
-          <th>Project Title</th>
-        </tr>
-        <tr *ngFor="let project of projects">
-          <td>{{project.Project_Name}}</td>
-          <td>{{project.Project_Id}}</td>
-          <td>{{project.Project_Title}}</td>
-        </tr>
-      </table>
-    </div>
-  </div>
-</div>
+</nav>
+
+<router-outlet></router-outlet>
