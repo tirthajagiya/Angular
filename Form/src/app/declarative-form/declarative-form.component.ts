@@ -28,12 +28,14 @@ export class DeclarativeFormComponent {
 
   }
 
-  submitForm() {
+  submitForm(data:any) {
     Swal.fire({
       title: "Form Fill Succesfully",
       icon: "success",
       draggable: true
     });
+    console.log(data.value);
+    
   }
 
   modeChange() {
