@@ -16,23 +16,28 @@ export class UpdateStudentComponent {
   private _activatedRoute = inject(ActivatedRoute)
   private _router = inject(Router)
 
-  data = { name: '', avatar: '' }
+  // data = { name: '', avatar: '' }
+
+
+
   id: number = 0;
   ngOnInit() {
     this.id = this._activatedRoute.snapshot.params["id"]
     this._api.getByid(this.id).subscribe((res: any) => {
-      this.data = res
-      console.log(this.data);
-      this.studentForm.patchValue({
-        name: this.data.name,
-        avatar: this.data.avatar
-      })
+      // this.data = res
+      this.studentForm.patchValue(res)
+
+      // console.log(this.data);
+      // this.studentForm.patchValue({
+      //   name: this.data.name,
+      //   avatar: this.data.avatar
+      // })
     })
   }
 
   studentForm: FormGroup = this._form.group({
-    name: [this.data.name],
-    avatar: [this.data.avatar]
+    name: [''],
+    avatar: ['']
   })
 
   updateData(data: any) {
