@@ -15,7 +15,7 @@ export class StudentDetailComponent {
   private _router = inject(Router)
   constructor(private _api: ApiStudentService) {
     this._api.getAll().subscribe((res: any) => {
-      this.data = res;      
+      this.data = res;
     })
   }
 
